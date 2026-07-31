@@ -230,7 +230,7 @@ async function main() {
     if (!channel.xmltv_id) channel.xmltv_id = channel.site_id
 
     const days = globalConfig.days || config.days
-    const currDate = dayjs(process.env.CURR_DATE || new Date()).tz('Asia/Jakarta')
+    const currDate = dayjs.utc(process.env.CURR_DATE || new Date().toISOString())
     const dates = Array.from({ length: days }, (_, day) => currDate.add(day, 'd'))
 
     dates.forEach((date: Dayjs) => {
