@@ -75,16 +75,8 @@ module.exports = {
             if (desc.length) {
               queue.i.description = parseText(prune(desc, '.hide'))
             }
-            // program categories
-            const cat = info.find('div[class=""] > a')
-            if (cat.length) {
-              queue.i.categories = cat.toArray().map(el => parseText($(el)))
-            }
-            // program image
-            const img = $('#main-content > div > div:nth-child(1) img')
-            if (img.length) {
-              queue.i.image = img.attr('src')
-            }
+            
+            // KATEGORI DAN GAMBAR DIHAPUS DI SINI AGAR TIDAK MUNCUL DI XMLTV
           }
         })
       }
