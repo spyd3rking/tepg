@@ -13,7 +13,6 @@ module.exports = {
     }
   },
   url: function ({ channel, date }) {
-    
     return `${API_ENDPOINT}/grid?channelGridKey=${channel.site_id}&date=${date.format('YYYY-MM-DD')}`
   },
   parser({ content }) {
@@ -24,9 +23,6 @@ module.exports = {
         title: item.grandparentTitle || item.title,
         subTitle: (item.grandparentTitle && item.title !== item.grandparentTitle) ? item.title : null,
         description: item.summary,
-        rating: item.contentRating || null,
-        date: item.originallyAvailableAt || item.year || null,
-        categories: parseCategories(item),
         season: item.parentIndex || null,
         episode: item.index || null,
         image: item.thumb || item.grandparentThumb || null,
@@ -48,15 +44,9 @@ module.exports = {
         lang: 'en',
         site_id: c.gridKey,
         name: c.title,
-        //  logo: c.thumb || null,
-        //  url: c.Media?.[0]?.Part?.[0]?.key ? `${API_ENDPOINT}${c.Media?.[0]?.Part?.[0]?.key}?X-Plex-Token=${token}` : null
       }
     })
   }
-}
-
-function parseCategories(item) {
-  return Array.isArray(item.Genre) ? item.Genre.map(g => g.tag) : []
 }
 
 function parseStart(item) {
