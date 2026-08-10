@@ -132,16 +132,15 @@ async function parseItems(content, date, cookies) {
       let description = null
       let category = null
 
-      if (res) {
+            if (res) {
         const $detail = cheerio.load(res)
         description = $detail('.synopsis').text().trim()
         
         // Ekstraksi kategori dari halaman detail mncvision
-        // Mencari teks setelah kata 'Genre :' di dalam list info detail
-        const genreText = $detail('.commercial-info, .program-info, li')
-          .text()
-          .match(/Genre\s*:\s*([^Detail\n\r]+)/i)
+        const fullText = $detail('.commercial-info, .program-info, li').text()
+        const genreText = fullText.match(/Genre\s*:\s*([^Detail\n\r]+)/i)
         
+        // Safety check untuk menghindari crash jika regex mengembalikan null
         if (genreText && genreText[1]) {
           category = genreText[1].trim()
         }
