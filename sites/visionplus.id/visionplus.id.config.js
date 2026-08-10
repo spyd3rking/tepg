@@ -19,8 +19,8 @@ const categoryMap = {
   'movie': 'Film',
   'news': 'Berita',
   'sports': 'Olahraga',
-  'Culture': 'Budaya',
-  'Music': 'Musik',
+  'culture': 'Budaya',
+  'music': 'Musik',
   'kids': 'Anak-Anak'
 }
 
