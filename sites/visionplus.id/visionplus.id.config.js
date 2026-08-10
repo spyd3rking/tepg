@@ -9,6 +9,19 @@ dayjs.extend(customParseFormat)
 
 const languages = { en: 'ENG', id: 'IND' }
 
+// Kamus translasi khusus untuk 1 Kategori Utama tunggal
+const categoryMap = {
+  'series': 'seri',
+  'entertainment': 'Hiburan',
+  'documentary': 'Dokumenter',
+  'infotainment': 'info hiburan',
+  'movies': 'Film',
+  'movie': 'Film',
+  'news': 'Berita',
+  'sports': 'Olahraga',
+  'kids': 'Anak-Anak'
+}
+
 module.exports = {
   site: 'visionplus.id',
   days: 2,
@@ -72,21 +85,22 @@ module.exports = {
   }
 }
 
+// Fungsi baru untuk mengekstrak hanya 1 kategori utama tunggal
 function parseCategories(categories) {
-  if (Array.isArray(categories)) {
-    const f = s => (s.match(/\//g) || []).length
-    const cat = [...categories]
-      .sort((a, b) => f(a) - f(b))
-      .map(a => a.split('/'))
-    categories = []
-    for (const a of cat) {
-      for (const b of a) {
-        if (!categories.includes(b)) {
-          categories.push(b)
-        }
-      }
-    }
+  if (Array.isArray(categories) && categories.length > 0) {
+    // 1. Ambil data string kategori pertama dari array bawaan API
+    const firstCategory = categories[0] || ''
+    
+    // 2. Pecah string berdasarkan '/' untuk membuang sub-kategori, ambil bagian paling depan
+    const mainCategory = firstCategory.split('/')[0].trim()
+    const lowerCategory = mainCategory.toLowerCase()
+    
+    // 3. Terjemahkan kata menggunakan kamus kustom jika cocok
+    const translatedCategory = categoryMap[lowerCategory] || mainCategory
+    
+    // Mengembalikan array berisi 1 teks kategori murni agar generator XMLTV memproses 1 tag saja
+    return [translatedCategory]
   }
 
-  return categories
+  return null
 }
