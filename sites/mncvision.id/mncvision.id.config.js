@@ -129,15 +129,34 @@ async function parseItems(content, date, cookies) {
     }
     await doFetch(queues, (queue, res) => {
       const $item = queue.i
-      const description = res ? cheerio.load(res)('.synopsis').text().trim() : null
+      let description = null
+      let category = null
+
+      if (res) {
+        const $detail = cheerio.load(res)
+        description = $detail('.synopsis').text().trim()
+        
+        // Ekstraksi kategori dari halaman detail mncvision
+        // Mencari teks setelah kata 'Genre :' di dalam list info detail
+        const genreText = $detail('.commercial-info, .program-info, li')
+          .text()
+          .match(/Genre\s*:\s*([^Detail\n\r]+)/i)
+        
+        if (genreText && genreText[1]) {
+          category = genreText[1].trim()
+        }
+      }
+
       const start = parseStart($item, date)
       const duration = parseDuration($item)
       const stop = start.add(duration, 'm')
+      
       programs.push({
         title: parseTitle($item),
         season: parseSeason($item),
         episode: parseEpisode($item),
         description: description && description !== '-' ? description : null,
+        category: category || null, // Field kategori ditambahkan di sini
         start,
         stop
       })
