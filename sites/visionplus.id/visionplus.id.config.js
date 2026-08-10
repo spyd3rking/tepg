@@ -11,7 +11,7 @@ const languages = { en: 'ENG', id: 'IND' }
 
 // Kamus translasi khusus untuk 1 Kategori Utama tunggal
 const categoryMap = {
-  'series': 'seri',
+  'series': 'Pengetahuan',
   'entertainment': 'Hiburan',
   'documentary': 'Dokumenter',
   'infotainment': 'info hiburan',
@@ -19,6 +19,8 @@ const categoryMap = {
   'movie': 'Film',
   'news': 'Berita',
   'sports': 'Olahraga',
+  'Culture': 'Budaya',
+  'Music': 'Musik',
   'kids': 'Anak-Anak'
 }
 
