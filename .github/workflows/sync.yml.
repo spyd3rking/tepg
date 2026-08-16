@@ -1,0 +1,15 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Berjalan otomatis setiap hari jam 00:00 UTC (07:00 WIB)
+  workflow_dispatch: # Memunculkan tombol manual "Run workflow" di GitHub
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync upstream changes
+        run: gh repo sync spyd3rking/tepg --allow-unrelated-histories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
