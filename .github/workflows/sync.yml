@@ -8,6 +8,8 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Sync upstream changes
         run: gh repo sync spyd3rking/tepg --allow-unrelated-histories
