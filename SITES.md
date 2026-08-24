@@ -48,7 +48,7 @@
     <tr><td><a href="sites/directv.com">directv.com</a></td><td align="right">1156</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/directv.com.ar">directv.com.ar</a></td><td align="right">371</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/directv.com.uy">directv.com.uy</a></td><td align="right">374</td><td align="center">🟢</td><td></td></tr>
-    <tr><td><a href="sites/dishtv.in">dishtv.in</a></td><td align="right">637</td><td align="center">🟢</td><td></td></tr>
+    <tr><td><a href="sites/dishtv.in">dishtv.in</a></td><td align="right">637</td><td align="center">🟢</td><td>https://github.com/iptv-org/epg/issues/3264</td></tr>
     <tr><td><a href="sites/distro.tv">distro.tv</a></td><td align="right">115</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/dna.fi">dna.fi</a></td><td align="right">123</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/dsmart.com.tr">dsmart.com.tr</a></td><td align="right">100</td><td align="center">🟢</td><td></td></tr>
@@ -65,7 +65,7 @@
     <tr><td><a href="sites/epgmaster.com">epgmaster.com</a></td><td align="right">1</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/epgshare01.online">epgshare01.online</a></td><td align="right">20706</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/foxsports.com.au">foxsports.com.au</a></td><td align="right">7</td><td align="center">🟢</td><td></td></tr>
-    <tr><td><a href="sites/foxtel.com.au">foxtel.com.au</a></td><td align="right">99</td><td align="center">🟢</td><td></td></tr>
+    <tr><td><a href="sites/foxtel.com.au">foxtel.com.au</a></td><td align="right">99</td><td align="center">🟢</td><td>https://github.com/iptv-org/epg/issues/3266</td></tr>
     <tr><td><a href="sites/france.tv">france.tv</a></td><td align="right">15</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/freetv.tv">freetv.tv</a></td><td align="right">7</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/freeview.co.uk">freeview.co.uk</a></td><td align="right">352</td><td align="center">🟢</td><td></td></tr>
@@ -165,7 +165,7 @@
     <tr><td><a href="sites/skyperfectv.co.jp">skyperfectv.co.jp</a></td><td align="right">196</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/snrt.ma">snrt.ma</a></td><td align="right">11</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/sporttv.pt">sporttv.pt</a></td><td align="right">8</td><td align="center">🟢</td><td></td></tr>
-    <tr><td><a href="sites/starhubtvplus.com">starhubtvplus.com</a></td><td align="right">118</td><td align="center">🟢</td><td></td></tr>
+    <tr><td><a href="sites/starhubtvplus.com">starhubtvplus.com</a></td><td align="right">118</td><td align="center">🟢</td><td>https://github.com/iptv-org/epg/issues/3262</td></tr>
     <tr><td><a href="sites/startimestv.com">startimestv.com</a></td><td align="right">77</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/streamingtvguides.com">streamingtvguides.com</a></td><td align="right">3066</td><td align="center">🟢</td><td></td></tr>
     <tr><td><a href="sites/superguidatv.it">superguidatv.it</a></td><td align="right">204</td><td align="center">🟢</td><td></td></tr>
