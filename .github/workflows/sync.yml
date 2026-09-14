@@ -11,7 +11,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Sync upstream changes
-        run: gh repo sync spyd3rking/tepg --allow-unrelated-histories
+        run: |
+          gh repo sync spyd3rking/tepg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
